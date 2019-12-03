@@ -1,0 +1,12 @@
+*.log
+
+#folders
+.storage
+.cloud
+.google.token
+
+# yaml files to ignore
+ip_bans.yaml
+known_devices.yaml
+secrets.yaml
+

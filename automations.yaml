@@ -1,0 +1,59 @@
+- id: 'desk_light_sunset'
+  alias: desk light on sunset
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -00:30:00
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: switch.desk_lamp
+    service: switch.turn_on
+    
+
+- id: 'desk_light_bedtime'
+  alias: desk light off bedtime
+  description: ''
+  trigger:
+  - platform: time
+    at: "22:15:00"
+  condition: []
+  action:
+  - data:
+      entity_id: switch.desk_lamp
+    service: switch.turn_off
+    
+
+
+- id: lava_lamp_on_lounge_work_nights
+  alias: on lava lamp work nights
+  description: ''
+  trigger:
+  - event: sunset
+    offset: +01:30:00
+    platform: sun
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
+  action:
+  - data:
+      entity_id: switch.lava_lamp
+    service: switch.turn_on
+
+- id: lava_lamp_off_work_nights
+  alias: off lava lamp work nights
+  description: ''
+  trigger:
+  - platform: time
+    at: "22:15:00"
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
+  action:
+  - data:
+      entity_id: switch.lava_lamp
+    service: switch.turn_off
+  
