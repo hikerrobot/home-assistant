@@ -5,6 +5,8 @@
 .cloud
 .google.token
 
+*.db
+
 # yaml files to ignore
 ip_bans.yaml
 known_devices.yaml
