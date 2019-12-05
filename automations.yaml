@@ -61,4 +61,22 @@
   - data:
       entity_id: switch.lava_lamp
     service: switch.turn_off
-  
+
+- id: first_hue_light_automation
+  alias: first_hue_light_automation
+  description: ''
+  trigger:
+  - platform: time
+    at: "19:54:00"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - thu
+      - fri
+  action:
+  - data:
+      entity_id: light.landing
+    service: light.turn_off
+
