@@ -36,7 +36,7 @@ switch:
       code_on: !secret snowman_switch_on
       code_off: !secret snowman_switch_off
       pulselength: 200
-      signal_repetitions: 20
+      signal_repetitions: 30
       
 binary_sensor:
   - platform: workday
