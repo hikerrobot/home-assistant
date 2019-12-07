@@ -10,7 +10,6 @@
   - data:
       entity_id: switch.desk_lamp
     service: switch.turn_on
-    
 
 - id: 'desk_light_bedtime'
   alias: desk light off bedtime
@@ -23,7 +22,6 @@
   - data:
       entity_id: switch.desk_lamp
     service: switch.turn_off
-
 
 - id: lava_lamp_on_lounge_work_nights
   alias: on lava lamp work nights
@@ -80,3 +78,40 @@
       entity_id: light.landing
     service: light.turn_off
 
+- id: 'snowman_on_light_sunset'
+  alias: snowman on sunset
+  description: ''
+  trigger:
+  - event: sunset
+    platform: sun
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+  - data:
+      entity_id: switch.porch_snowman
+    service: switch.turn_on
+
+- id: 'snowman_off_10pm'
+  alias: snowman off 10pm
+  description: ''
+  trigger:
+  - platform: time
+    at: "22:00:00"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+  - data:
+      entity_id: switch.porch_snowman
+    service: switch.turn_off

@@ -32,6 +32,11 @@ switch:
       code_off: !secret desk_lamp_switch_off
       pulselength: 200
       signal_repetitions: 20
+    porch_snowman:
+      code_on: !secret snowman_switch_on
+      code_off: !secret snowman_switch_off
+      pulselength: 200
+      signal_repetitions: 20
       
 binary_sensor:
   - platform: workday
