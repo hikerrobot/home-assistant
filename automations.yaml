@@ -119,3 +119,26 @@
   - data:
       entity_id: switch.porch_snowman
     service: switch.turn_off
+
+
+- id: xmas_lights_on
+  alias: on xmas lights
+  description: ''
+  trigger:
+  - platform: time
+    at: "15:00:00"
+  action:
+  - data:
+      entity_id: switch.xmas_lights
+    service: switch.turn_on
+    
+- id: xmas_lights_off
+  alias: off xmas lights
+  description: ''
+  trigger:
+  - platform: time
+    at: "21:45:00"
+  action:
+  - data:
+      entity_id: switch.xmas_lights
+    service: switch.turn_off
