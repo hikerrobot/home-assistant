@@ -78,49 +78,6 @@
       entity_id: light.landing
     service: light.turn_off
 
-- id: 'snowman_on_light_sunset'
-  alias: snowman on sunset
-  description: ''
-  trigger:
-  - event: sunset
-    platform: sun
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-      - sat
-      - sun
-  action:
-  - data:
-      entity_id: switch.porch_snowman
-    service: switch.turn_on
-
-- id: 'snowman_off_10pm'
-  alias: snowman off 10pm
-  description: ''
-  trigger:
-  - platform: time
-    at: "22:00:00"
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-      - sat
-      - sun
-  action:
-  - data:
-      entity_id: switch.porch_snowman
-    service: switch.turn_off
-
-
 - id: xmas_lights_on
   alias: on xmas lights
   description: ''

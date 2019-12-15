@@ -17,7 +17,6 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
-
 switch:
   platform: rpi_rf
   gpio: 17
@@ -32,11 +31,6 @@ switch:
       code_off: !secret desk_lamp_switch_off
       pulselength: 200
       signal_repetitions: 20
-    porch_snowman:
-      code_on: !secret snowman_switch_on
-      code_off: !secret snowman_switch_off
-      pulselength: 200
-      signal_repetitions: 30
     xmas_lights:
       code_on: !secret xmas_lights_switch_on
       code_off: !secret xmas_lights_switch_off
