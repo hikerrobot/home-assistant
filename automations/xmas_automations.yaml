@@ -1,5 +1,23 @@
-- id: xmas_lights_on_schooldays
-  alias: on xmas lights schooldays
+- id: xmas_lights_on_schooldays_am
+  alias: on xmas lights schooldays am
+  description: ''
+  trigger:
+  - platform: time
+    at: "06:45:00"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    service: switch.turn_on
+    entity_id: switch.xmas_lights
+
+- id: xmas_lights_on_schooldays_pm
+  alias: on xmas lights schooldays pm
   description: ''
   trigger:
   - platform: time
@@ -32,12 +50,30 @@
     service: switch.turn_on
     entity_id: switch.xmas_lights
     
-- id: xmas_lights_off
-  alias: off xmas lights
+- id: xmas_lights_off_pm
+  alias: off xmas lights pm
   description: ''
   trigger:
   - platform: time
     at: "21:45:00"
+  action:
+    service: switch.turn_off
+    entity_id: switch.xmas_lights
+
+- id: xmas_lights_off_schooldays_am
+  alias: off xmas lights schooldays am
+  description: ''
+  trigger:
+  - platform: time
+    at: "09:15:00"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   action:
     service: switch.turn_off
     entity_id: switch.xmas_lights
