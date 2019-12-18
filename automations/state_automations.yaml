@@ -1,0 +1,32 @@
+- id: first_state_automation
+  alias: first_state_automation
+  description: ''
+  trigger:
+  - platform: state
+    from: 'on'
+    to: 'off'
+    entity_id: light.tv
+  condition:
+    - condition: time
+      after: '21:00'
+      before: '23:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.lava_lamp
+
+
+- id: second_state_automation
+  alias: second_state_automation
+  description: ''
+  trigger:
+  - platform: state
+    from: 'on'
+    to: 'off'
+    entity_id: switch.desk_lamp
+  condition:
+    - condition: time
+      after: '22:00'
+      before: '23:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.lava_lamp
