@@ -51,6 +51,6 @@ device_tracker:
 
 person:
   - name: Rob
-    id: rob_id
+    id: !secret rob_id
     device_trackers:
       - device_tracker.flex_2
