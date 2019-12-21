@@ -6,6 +6,8 @@
 .google.token
 
 *.db
+*.shm
+*.wal
 
 # yaml files to ignore
 ip_bans.yaml

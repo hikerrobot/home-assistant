@@ -38,3 +38,15 @@ binary_sensor:
     country: UK
     workdays: [mon, tue, wed, thu, fri]
     excludes: [sat, sun]
+
+device_tracker:
+  - platform: bluetooth_le_tracker
+    interval_seconds: 45 # changed from default of 12
+    new_device_defaults:
+      track_new_devices: true
+
+person:
+  - name: Rob
+    id: rob_id
+    device_trackers:
+      - device_tracker.flex_2
