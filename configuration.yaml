@@ -46,8 +46,14 @@ binary_sensor:
 device_tracker:
   - platform: bluetooth_le_tracker
     interval_seconds: 45 # changed from default of 12
+    consider_home: 180
     new_device_defaults:
-      track_new_devices: true
+      track_new_devices: false
+  - platform: bluetooth_tracker
+    interval_seconds: 45 # changed from default of 12
+    consider_home: 180
+    new_device_defaults:
+      track_new_devices: false
 
 person:
   - name: Rob
