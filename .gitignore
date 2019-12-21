@@ -1,3 +1,5 @@
+.ssh
+.HA_VERSION
 *.log
 
 #folders
