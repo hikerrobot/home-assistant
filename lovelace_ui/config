@@ -45,14 +45,10 @@ views:
     title: Automations
   - badges: []
     cards:
-      - type: horizontal-stack
-    path: test
-    title: test
-  - badges: []
-    cards:
       - cards:
           - entities:
               - entity: person.rob
+                image: /local/monkey_robot.jpg
             type: entities
         title: People
         type: vertical-stack
