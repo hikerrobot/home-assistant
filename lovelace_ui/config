@@ -1,0 +1,57 @@
+title: Home
+views:
+  - badges:
+      - entity: binary_sensor.workday_sensor
+      - entity: binary_sensor.updater
+      - entity: person.rob
+      - entity: sun.sun
+    cards:
+      - entity: weather.home
+        type: weather-forecast
+      - entities:
+          - entity: switch.lava_lamp
+          - entity: switch.desk_lamp
+          - entity: switch.xmas_lights
+        show_header_toggle: true
+        title: socket lights
+        type: entities
+      - entities:
+          - entity: light.tv
+          - entity: light.champ_gaming_zone
+          - entity: light.bathroom
+          - entity: light.rockstar_cave_den
+          - entity: light.landing
+          - entity: light.hue_white_lamp_3
+        show_header_toggle: true
+        title: Hue lights
+        type: entities
+    path: default_view
+    title: Home
+  - badges: []
+    cards:
+      - entities:
+          - entity: automation.desk_light_on_sunset
+          - entity: automation.desk_light_off_bedtime
+          - entity: automation.on_lava_lamp_work_nights
+          - entity: automation.off_lava_lamp_work_nights
+          - entity: automation.first_hue_light_automation
+          - entity: automation.on_xmas_lights_weekend
+          - entity: automation.off_xmas_lights_weekend
+          - entity: automation.on_xmas_lights_schooldays
+          - entity: automation.on_xmas_lights_schooldays
+        title: Automation
+        type: entities
+    path: automations
+    title: Automations
+  - badges: []
+    cards:
+      - cards:
+          - entities:
+              - entity: person.rob
+                image: /local/monkey_robot.jpg
+            type: entities
+        title: People
+        type: vertical-stack
+    path: integrations
+    title: Integrations
+

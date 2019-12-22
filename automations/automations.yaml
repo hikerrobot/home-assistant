@@ -5,12 +5,9 @@
   - event: sunset
     offset: -00:30:00
     platform: sun
-  condition: []
   action:
-  - data:
-      entity_id: switch.desk_lamp
     service: switch.turn_on
-    
+    entity_id: switch.desk_lamp
 
 - id: 'desk_light_bedtime'
   alias: desk light off bedtime
@@ -18,12 +15,9 @@
   trigger:
   - platform: time
     at: "22:15:00"
-  condition: []
   action:
-  - data:
-      entity_id: switch.desk_lamp
     service: switch.turn_off
-
+    entity_id: switch.desk_lamp
 
 - id: lava_lamp_on_lounge_work_nights
   alias: on lava lamp work nights
@@ -40,9 +34,8 @@
       - thu
       - fri
   action:
-  - data:
-      entity_id: switch.lava_lamp
     service: switch.turn_on
+    entity_id: switch.lava_lamp
 
 - id: lava_lamp_off_work_nights
   alias: off lava lamp work nights
@@ -58,9 +51,8 @@
       - thu
       - fri
   action:
-  - data:
-      entity_id: switch.lava_lamp
     service: switch.turn_off
+    entity_id: switch.lava_lamp
 
 - id: first_hue_light_automation
   alias: first_hue_light_automation
@@ -76,7 +68,6 @@
       - thu
       - fri
   action:
-  - data:
-      entity_id: light.landing
     service: light.turn_off
+    entity_id: light.landing
 
