@@ -54,9 +54,3 @@ device_tracker:
     consider_home: 180
     new_device_defaults:
       track_new_devices: false
-
-person:
-  - name: Rob
-    id: !secret rob_id
-    device_trackers:
-      - device_tracker.flex_2
