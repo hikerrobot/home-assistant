@@ -15,19 +15,24 @@ switch:
   platform: rpi_rf
   gpio: 17
   switches:
-    lava_lamp:
-      code_on: !secret lava_lamp_switch_on
-      code_off: !secret lava_lamp_switch_off
+    lounge_lava_lamp:
+      code_on: !secret red_lava_lamp_switch_on
+      code_off: !secret red_lava_lamp_switch_off
       pulselength: 200
       signal_repetitions: 20
-    desk_lamp:
-      code_on: !secret desk_lamp_switch_on
-      code_off: !secret desk_lamp_switch_off
+    monkey_lava_lamp:
+      code_on: !secret blue_lava_lamp_switch_on
+      code_off: !secret blue_lava_lamp_switch_off
       pulselength: 200
       signal_repetitions: 20
     xmas_lights:
       code_on: !secret xmas_lights_switch_on
       code_off: !secret xmas_lights_switch_off
+      pulselength: 200
+      signal_repetitions: 30
+    fish_tank:
+      code_on: !secret fish_tank_switch_on
+      code_off: !secret fish_tank_switch_off
       pulselength: 200
       signal_repetitions: 30
       
@@ -48,3 +53,11 @@ device_tracker:
     consider_home: 180
     new_device_defaults:
       track_new_devices: false
+  - platform: nmap_tracker
+    hosts: 192.168.1.0/24
+    home_interval: 10
+    exclude:
+      - 192.168.1.1
+      - 192.168.1.2
+      - 192.168.1.3
+      - 192.168.1.6

@@ -1,23 +1,58 @@
-- id: 'desk_light_sunset'
-  alias: desk light on sunset
-  description: ''
-  trigger:
-  - event: sunset
-    offset: -00:30:00
-    platform: sun
-  action:
-    service: switch.turn_on
-    entity_id: switch.desk_lamp
-
-- id: 'desk_light_bedtime'
-  alias: desk light off bedtime
+- id: 'monkeys_lava_wake_up'
+  alias: monkey lava light on for work
   description: ''
   trigger:
   - platform: time
-    at: "22:15:00"
+    at: "06:40:00"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    service: switch.turn_on
+    entity_id: switch.monkey_lava_lamp
+
+- id: 'monkeys_lava_woken_up'
+  alias: monkey's awake for work
+  description: ''
+  trigger:
+  - platform: time
+    at: "07:30:00"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   action:
     service: switch.turn_off
-    entity_id: switch.desk_lamp
+    entity_id: switch.monkey_lava_lamp
+
+- id: 'fish_tank_on'
+  alias: fish tank light on
+  description: ''
+  trigger:
+  - platform: time
+    at: "07:00:00"
+  action:
+    service: switch.turn_on
+    entity_id: switch.fish_tank
+
+- id: 'fish_tank_off'
+  alias: fish tank light off
+  description: ''
+  trigger:
+  - platform: time
+    at: "21:30:00"
+  action:
+    service: switch.turn_off
+    entity_id: switch.fish_tank
 
 - id: lava_lamp_on_lounge_work_nights
   alias: on lava lamp work nights
